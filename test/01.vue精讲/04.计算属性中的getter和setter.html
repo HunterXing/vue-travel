@@ -26,14 +26,18 @@
             //计算属性  内置缓存 如果依赖的值没有进行改变，那么计算属性不会再次调用
             computed: {
                 fullname:{
-                    getter(){
+                    get(){
                         return this.firstName + '' +this.lastName
+                    },
+                    set(value){
+                        console.log(value)
                     }
                 }
             },
 
             // //方法会每次调用
             // methods: {
+            //     fullname(){
             //     fullname(){
             //         return this.firstName + '' +this.lastName
             //     }
