@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app" >
+        {{fullname}}
+    </div>
+
+    <script>
+        var app = new Vue({
+            el:'#app',
+            data(){
+                return{
+                    firstName:'Xing',
+                    lastName:'Hunter',
+                    fullname:'HunterXing'
+                }
+            },
+            // //计算属性  内置缓存 如果依赖的值没有进行改变，那么计算属性不会再次调用
+            // computed: {
+            //     fullname(){
+            //         return this.firstName + '' +this.lastName 
+            //     }
+            // },
+
+            // //方法会每次调用
+            // methods: {
+            //     fullname(){
+            //         return this.firstName + '' +this.lastName
+            //     }
+            // },
+            //也会有缓存，和计算属性相似 但是代码较多 
+            watch:{
+                firstName(){
+                    return this.fullname = this.firstName + '' +this.lastName 
+                },
+                lastName(){
+                    return this.fullname = this.firstName + '' +this.lastName 
+                },
+
+            }
+
+        })
+
+      
+    </script>
+</body>
+</html>
