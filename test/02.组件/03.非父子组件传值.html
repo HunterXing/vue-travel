@@ -10,40 +10,22 @@
 </head>
 <body>
     <div id="app"  >
-        <div >
-            <counter ref="hello"></counter>
-        </div>
+        <child  @click.native="handleClick"></child>
     </div>
 
     <script>
-       
-       Vue.component('counter',{
-            template:`<div @click="handleClick"></div>`,
-            data(){
-                return{
-                    msg:'hi'
-                }
-            },
-            methods:{
-                handleClick(){
-                    
-                }
-            }
-       }),
+      
+        Vue.component('child',{
+            template:`<div >Child</div>`,
+        }),
         new Vue({
             el:'#app',
-            data(){
-                return{
-                    msg:'hello'
-                }
-            },
             methods:{
                 handleClick(){
-                    console.log(this.$refs.hello.innerHTML)
+                    alert('click')
                 }
             }
         })
-
     </script>
 </body>
 </html>

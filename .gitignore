@@ -1,15 +1,17 @@
-/.idea/
-/Application/Runtime/
+.DS_Store
+node_modules/
+/dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+/test/unit/coverage/
+/test/e2e/reports/
+selenium-debug.log
 
-# 忽略.vscode的所有文件
-*.vscode/
-*node_modules/
-*.idea/
-*workspace.xml
-
-
-# 忽略名称中末尾为ignore的文件夹
-#*ignore/
-
-# 忽略名称中间包含ignore的文件夹
-#*ignore*/
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
