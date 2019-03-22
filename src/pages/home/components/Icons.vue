@@ -1,8 +1,8 @@
 <template>
     <div class="icons">
          <swiper >
-             <swiper-slide >
-                <div class="icon" v-for="item of iconList" :key="item.id">
+             <swiper-slide v-for="( page,index) of pages" :key="index">
+                <div class="icon" v-for="item of page" :key="item.id">
                     <div class='icon-img'>
                         <img class="icon-img-content" :src="item.imgUrl" >
                     </div>
@@ -22,7 +22,7 @@ export default {
             {
                 id : '0001',
                 imgUrl: '//img.alicdn.com/tps/TB1Md6KPVXXXXamXXXXXXXXXXXX-200-200.png_200x200q90.jpg_.webp',
-                desc : '景点门票'
+                desc : '景点门票景点门票'
             },
             {
                 id : '0002',
@@ -67,12 +67,28 @@ export default {
         ]
         }
 
+    },
+    //计算属性 自带缓存
+    computed :{
+        pages () {
+            const pages = []
+            this.iconList.forEach((item,index) => {
+                const page = Math.floor(index/8)  //向下取整
+                if(!pages[page]){                  //如果不存在
+                    pages[page] = []
+                }
+                pages[page].push(item) //将一维数组拆成二维数组
+            })
+            return pages
+        }
+
     }
 }
 </script>
 
 <style lang="stylus">
     @import '~styles/varibles.styl'
+    @import '~styles/mixins.styl'
     .icons >>> .swiper-container
          height 0
          padding-bottom 50%
@@ -110,6 +126,7 @@ export default {
             line-height .44rem
             color $darkTextCorlor
             text-align center
+            ellipsis()
 
 
 
