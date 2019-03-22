@@ -46,7 +46,7 @@ export default {
   overflow: hidden;
   width: 100%;
   height: 0;
-  padding-bottom: 44%;
+  padding-bottom: 33.33%;
 
   .swiper-img {
     width: 100%;
