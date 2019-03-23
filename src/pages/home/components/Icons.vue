@@ -21,47 +21,47 @@ export default {
               iconList: [
             {
                 id : '0001',
-                imgUrl: '//img.alicdn.com/tps/TB1Md6KPVXXXXamXXXXXXXXXXXX-200-200.png_200x200q90.jpg_.webp',
+                imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
                 desc : '景点门票景点门票'
             },
             {
                 id : '0002',
-                imgUrl: '//img.alicdn.com/tps/TB1Md6KPVXXXXamXXXXXXXXXXXX-200-200.png_200x200q90.jpg_.webp',
+                imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
                 desc : '滑雪季'
             },
             {
                 id : '0003',
-                imgUrl: '//img.alicdn.com/tps/TB1Md6KPVXXXXamXXXXXXXXXXXX-200-200.png_200x200q90.jpg_.webp',
+                imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
                 desc : '泡温泉'
             },
             {
                 id : '0004',
-                imgUrl: '//img.alicdn.com/tps/TB1Md6KPVXXXXamXXXXXXXXXXXX-200-200.png_200x200q90.jpg_.webp',
+                imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
                 desc : '景点门票'
             },
             {
                 id : '0005',
-                imgUrl: '//img.alicdn.com/tps/TB1Md6KPVXXXXamXXXXXXXXXXXX-200-200.png_200x200q90.jpg_.webp',
+                imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
                 desc : '滑雪季'
             },
             {
                 id : '0006',
-                imgUrl: '//img.alicdn.com/tps/TB1Md6KPVXXXXamXXXXXXXXXXXX-200-200.png_200x200q90.jpg_.webp',
+                imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
                 desc : '泡温泉'
             },
             {
                 id : '0007',
-                imgUrl: '//img.alicdn.com/tps/TB1Md6KPVXXXXamXXXXXXXXXXXX-200-200.png_200x200q90.jpg_.webp',
+                imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
                 desc : '景点门票'
             },
             {
                 id : '0008',
-                imgUrl: '//img.alicdn.com/tps/TB1Md6KPVXXXXamXXXXXXXXXXXX-200-200.png_200x200q90.jpg_.webp',
+                imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
                 desc : '滑雪季'
             },
             {
                 id : '0009',
-                imgUrl: '//img.alicdn.com/tps/TB1Md6KPVXXXXamXXXXXXXXXXXX-200-200.png_200x200q90.jpg_.webp',
+                imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
                 desc : '一日游'
             },
         ]
@@ -86,47 +86,45 @@ export default {
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
     @import '~styles/varibles.styl'
     @import '~styles/mixins.styl'
     .icons >>> .swiper-container
          height 0
          padding-bottom 50%
     .icons
-         overflow hidden
-         height 0
-         padding-bottom 50%
-    .icon
-        position relative
-        overflow hidden
-        float left
-        width 25%
-        height 0
-        padding-bottom 25%
+        margin-top .2rem
+        .icon
+            position relative
+            overflow hidden
+            float left
+            width 25%
+            height 0
+            padding-bottom 25%
 
-        .icon-img
-            position absolute
-            top 0
-            left 0
-            right 0
-            bottom .44rem
-            box-sizing border-box
-            border .1rem
+            .icon-img
+                position absolute
+                top 0
+                left 0
+                right 0
+                bottom .44rem
+                box-sizing border-box
+                border .1rem
 
-            .icon-img-content
-                display block
-                margin 0 auto
-                height 100%
-        .icon-desc
-            position absolute
-            bottom  0
-            left 0
-            right 0
-            height .44rem
-            line-height .44rem
-            color $darkTextCorlor
-            text-align center
-            ellipsis()
+                .icon-img-content
+                    display block
+                    margin 0 auto
+                    height 100%
+            .icon-desc
+                position absolute
+                bottom  0
+                left 0
+                right 0
+                height .44rem
+                line-height .44rem
+                color $darkTextCorlor
+                text-align center
+                ellipsis()
 
 
 
