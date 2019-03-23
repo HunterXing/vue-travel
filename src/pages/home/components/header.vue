@@ -26,6 +26,7 @@ export default {
 // @import '~@/assets/styles/varibles.styl'
 @import '~styles/varibles.styl'
 .header {
+ 
   display: flex;
   background: $bg-color;
   line-height: 0.86rem;
