@@ -1,8 +1,8 @@
 <template>
   <div class="wrapper">
-    <swiper :options="swiperOption">
+    <swiper :options="swiperOption" v-if="swiperList.length">
       <!-- slides -->
-      <swiper-slide v-for="item of swiperList" :key="item.id">
+      <swiper-slide v-for="(item,index) of swiperList" :key="index">
         <img class="swiper-img" :src="item.imgUrl">
       </swiper-slide>
 
@@ -16,22 +16,20 @@
 <script>
 export default {
   name: "HomeSwiper",
+  props:{
+      swiperList:Array
+  },
   data() {
     return {
       swiperOption: {
         pagination: ".swiper-pagination", //小点点指示
-        loop: true //支持循环轮播
-      },
-      swiperList: [
-        {
-          id: "001",
-          imgUrl: "//img3.mukewang.com/szimg/5c91a1590858617209000300.jpg"
-        },
-        {
-          id: "002",
-          imgUrl: "//img4.mukewang.com/szimg/5c886e560874bfb209000300.jpg"
-        }
-      ]
+        loop: true ,//支持循环轮播
+        //设定初始化时slide的索引
+        initialSlide: 0,
+        //自动播放
+       
+
+      }
     };
   }
 };
@@ -46,7 +44,7 @@ export default {
   overflow: hidden;
   width: 100%;
   height: 0;
-  padding-bottom: 33.33%;
+  padding-bottom: 31.25%;
 
   .swiper-img {
     width: 100%;
