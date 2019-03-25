@@ -3,7 +3,6 @@
       <router-link to="/">
          <span class="iconfont back-icon">&#xe6a4;</span>
       </router-link>
-
       城市选择
   </div>
 </template>
