@@ -11,6 +11,7 @@
 
 
 <script>
+import { mapState } from 'vuex'
 import HomeHeader from './components/Header'
 import HomeSwiper from './components/Swiper'
 import HomeIcons from './components/Icons'
@@ -24,7 +25,8 @@ export default {
            swiperList:[],
            iconList:[],
            recommendList:[],
-           weekendList:[]
+           weekendList:[],
+           lastCity:''
       }
   },
   components:{
@@ -36,7 +38,7 @@ export default {
   },
   methods :{
       getHomeInfo (){
-          axios.get('/api/index.json')    //模拟数据
+          axios.get('/api/index.json?city='+this.city)    //模拟数据
             .then(this.getHomeInfoSucc)
       },
       getHomeInfoSucc (res){
@@ -53,7 +55,17 @@ export default {
       }
   },
   mounted (){
+      this.lastCity = this.city
       this.getHomeInfo ()
+  },
+  //keep-alive新增的生命周期函数
+  activated (){
+      if (this.lastCity != this.city){
+          this.getHomeInfo ()
+      }
+  },
+  computed : {
+      ...mapState(['city'])
   }
 }
 </script>
