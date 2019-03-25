@@ -3,10 +3,10 @@
       <router-link tag="div" to="/"  class="header-abs" v-show="showAbs">
         <span class="iconfont header-abs-back">&#xe6a4;</span>
       </router-link>
-      <div class="header-fixed" v-show="showFixed" :style="styleOptions">
+      <router-link tag="div" to="/" class="header-fixed" v-show="showFixed" :style="styleOptions">
           <span class="iconfont header-fixed-back">&#xe6a4;</span>
           景点详情
-      </div>
+      </router-link>
   </div>
 </template>
 
@@ -40,12 +40,14 @@ export default {
         } else {
             this.showAbs = true
         }
+       // console.log('scoll')
     }
   },
   mounted () {
     document.addEventListener('scroll', this.scrollHeader)
+
   },
-  beforeDestroy () {
+  deactivated () {
     document.removeEventListener('scroll', this.scrollHeader)
   }
 
