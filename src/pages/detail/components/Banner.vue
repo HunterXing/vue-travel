@@ -3,16 +3,16 @@
     <div class="banner" @click = "handleBannerClick">
       <img
         class="banner-img"
-        src="//img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_600x330_f922b488.jpg"
+        :src="bannerImg"
       >
       <div class="banner-info">
-        <div class="banner-title">东方宫殿建筑代表，世界宫殿建筑典范</div>
+        <div class="banner-title">{{this.sightName}}</div>
         <div class="banner-number">
-          <span class="iconfont banner-icon">&#xe650;</span>39
+          <span class="iconfont banner-icon">&#xe650;</span>{{this.gallaryImgs.length}}
         </div>
       </div>
     </div>
-    <common-gallary :imgs="imgs" v-if="showGallary" @close="handleCloseGallary" ></common-gallary>
+    <common-gallary :imgs="gallaryImgs" v-if="showGallary" @close="handleCloseGallary" ></common-gallary>
   </div>
 </template>
 
@@ -20,6 +20,11 @@
 import CommonGallary from "common/gallary/Gallary";
 export default {
   name: "DetailBanner",
+  props:{
+      sightName:String,
+      bannerImg:String,
+      gallaryImgs: Array
+  },
   components: {
     CommonGallary
   },
