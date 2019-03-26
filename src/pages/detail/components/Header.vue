@@ -26,22 +26,22 @@ export default {
           return  !this.showAbs
       }
   },
-   methods: {
-    scrollHeader () {
-        //console.log(document.documentElement.scrollTop)
-        const top = document.documentElement.scrollTop
-        if (top > 0) {
-            let t = top / 100
-            if (t > 1) {
-            t = 1
-            }
-            this.styleOptions.opacity = t
-            this.showAbs = false
-        } else {
-            this.showAbs = true
-        }
-       // console.log('scoll')
-    }
+  methods: {
+  scrollHeader () {
+      //console.log(document.documentElement.scrollTop)
+      const top = document.documentElement.scrollTop
+      if (top > 0) {
+          let t = top / 100
+          if (t > 1) {
+          t = 1
+          }
+          this.styleOptions.opacity = t
+          this.showAbs = false
+      } else {
+          this.showAbs = true
+      }
+      // console.log('scoll')
+  }
   },
   mounted () {
     document.addEventListener('scroll', this.scrollHeader)
@@ -75,7 +75,7 @@ export default {
         top 0
         left 0
         right 0
-
+        z-index 2
         height $HeaderHeight
         line-height $HeaderHeight
         text-align center
