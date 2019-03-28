@@ -68,7 +68,15 @@ export default {
         }
     },
     mounted () {
-        this.scroll = new Bscroll(this.$refs.wrapper)
+        const options =  {
+            scrollY: false, // 因为scrollY默认为true，其实可以省略
+            scrollX: true,
+            mouseWheel: true,
+            click: true,
+            taps: true
+          }
+
+        this.scroll = new Bscroll(this.$refs.wrapper,options)
     },
     computed: {
         ...mapState({
